@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Y-Diet: 90% உட்புற வாழ்க்கையும் ஆரோக்கியமான Habitome-உம்</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Tamil:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* --- பொதுவான ஸ்டைல்கள் (General Styles) --- */
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans Tamil', sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.7;
+            background-color: #f4f7f6; /* மென்மையான பின்னணி நிறம் */
+            color: #424242; /* எழுத்துக்களுக்கு சற்று மென்மையான கருப்பு */
+        }
+
+        /* --- முக்கிய கண்டெய்னர் (Main Container) --- */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+        }
+
+        /* --- கரோசல் (Carousel) ஸ்டைல்கள் --- */
+        header {
+            width: 100%;
+        }
+        
+        .carousel-container {
+            position: relative;
+            width: 100%;
+            margin: auto;
+            overflow: hidden;
+            background-color: #e0e0e0;
+        }
+
+        .carousel-slide {
+            display: none;
+            width: 100%;
+        }
+
+        .carousel-slide img {
+            width: 100%;
+            height: auto;
+            display: block;
+            aspect-ratio: 16 / 9;
+            object-fit: cover;
+        }
+
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            margin-top: -22px;
+            color: white;
+            font-weight: bold;
+            font-size: 20px;
+            transition: 0.3s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+
+        .prev:hover, .next:hover {
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+
+        .slide-number {
+            color: #f2f2f2;
+            font-size: 12px;
+            padding: 8px 12px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: rgba(0, 0, 0, 0.3);
+            border-radius: 0 0 5px 0;
+        }
+        
+        .fade {
+            animation-name: fade;
+            animation-duration: 1.5s; /* அனிமேஷன் மெதுவாக மாற 1.5s */
+        }
+
+        @keyframes fade {
+            from {opacity: .4}
+            to {opacity: 1}
+        }
+
+        /* --- முக்கிய உள்ளடக்கம் (Main Content) --- */
+        main {
+            padding: 20px;
+        }
+
+        /* --- தலைப்புகள் (Headings) --- */
+        h1 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #004d40; /* அடர் பச்சை */
+            line-height: 1.3;
+            margin-bottom: 15px;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #00695c; /* நடுத்தர பச்சை */
+            border-bottom: 2px solid #b2dfdb;
+            padding-bottom: 8px;
+            margin-top: 30px;
+        }
+
+        h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #00796b; /* வெளிர் பச்சை */
+            margin-top: 25px;
+        }
+
+        /* --- பத்தி மற்றும் பட்டியல் (Paragraph & Lists) --- */
+        p {
+            font-size: 1rem;
+            margin-bottom: 15px;
+        }
+
+        ul {
+            margin-left: 20px;
+            padding-left: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        /* --- வண்ணமயமான முக்கிய வார்த்தைகள் (Colorful Keywords) --- */
+        .keyword-ydiet {
+            font-weight: 700;
+            color: #004d40; /* Y-Diet: முதன்மை பச்சை */
+        }
+        .keyword-swap {
+            font-weight: 700;
+            color: #1565c0; /* Smart Swap: நம்பிக்கையான நீலம் */
+        }
+        .keyword-habitome {
+            font-weight: 700;
+            color: #d84315; /* Habitome: ஆழமான ஆரஞ்சு */
+        }
+
+        /* --- "ஸ்மார்ட் ஸ்வாப்" சிறப்பு பெட்டிகள் (Smart Swap Boxes) --- */
+        .smart-swap {
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+            border-left-width: 5px;
+            border-left-style: solid;
+        }
+
+        .smart-swap strong {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 700;
+        }
+
+        /* L6 - சூரிய ஒளி வண்ணம் */
+        .smart-swap.sun {
+            background-color: #fff8e1; /* வெளிர் மஞ்சள் */
+            border-left-color: #f57c00; /* சூடான ஆரஞ்சு */
+        }
+        .smart-swap.sun strong {
+            color: #bf360c; /* அடர் ஆரஞ்சு */
+        }
+        .smart-swap.sun .keyword-swap {
+             color: #bf360c;
+        }
+
+        /* L4 - காற்று வண்ணம் */
+        .smart-swap.air {
+            background-color: #e3f2fd; /* வெளிர் நீலம் */
+            border-left-color: #0288d1; /* நடுத்தர நீலம் */
+        }
+        .smart-swap.air strong {
+            color: #01579b; /* அடர் நீலம் */
+        }
+        .smart-swap.air .keyword-swap {
+             color: #01579b;
+        }
+
+        /* L5 - உணவு வண்ணம் */
+        .smart-swap.food {
+            background-color: #e0f2f1; /* வெளிர் பச்சை */
+            border-left-color: #00796b; /* நடுத்தர பச்சை */
+        }
+        .smart-swap.food strong {
+            color: #004d40; /* அடர் பச்சை */
+        }
+         .smart-swap.food .keyword-swap {
+             color: #004d40;
+        }
+
+        /* --- அடிக்குறிப்பு (Footer) --- */
+        footer {
+            background-color: #263238; /* அடர் சாம்பல் */
+            color: #eceff1;
+            padding: 25px 20px;
+            text-align: center;
+        }
+
+        footer .project-name {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin: 0 0 15px 0;
+            color: #80cbc4; /* Y-Diet பிராண்ட் நிறம் */
+        }
+
+        footer .disclaimer {
+            font-size: 0.9rem;
+            color: #b0bec5;
+            margin-bottom: 15px;
+            border-top: 1px solid #455a64;
+            padding-top: 20px;
+            text-align: left;
+        }
+        
+        footer .disclaimer p {
+            margin-bottom: 10px;
+        }
+
+        footer .copyright {
+            font-size: 0.9rem;
+            color: #90a4ae;
+            margin-top: 15px;
+        }
+
+        /* --- மொபைல் பதிலளிப்பு (Mobile Responsive) --- */
+        @media (min-width: 600px) {
+            main {
+                padding: 30px;
+            }
+
+            h1 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <header>
+            <div class="carousel-container">
+                
+                <div class="carousel-slide fade">
+                    <div class="slide-number">1 / 10</div>
+                    <img src="banner1.jpeg" alt="இயற்கை வாழ்முறை பேனர் 1">
+                </div>
+                <div class="carousel-slide fade">
+                    <div class="slide-number">2 / 10</div>
+                    <img src="banner2.jpeg" alt="ஆரோக்கிய உணவு பேனர் 2">
+                </div>
+                <div class="carousel-slide fade">
+                    <div class="slide-number">3 / 10</div>
+                    <img src="banner3.jpeg" alt="சூரிய ஒளி பேனர் 3">
+                </div>
+                <div class="carousel-slide fade">
+                    <div class="slide-number">4 / 10</div>
+                    <img src="banner4.jpeg" alt="சுத்தமான காற்று பேனர் 4">
+                </div>
+                <div class="carousel-slide fade">
+                    <div class="slide-number">5 / 10</div>
+                    <img src="banner5.jpeg" alt="மூலிகை தோட்டம் பேனர் 5">
+                </div>
+                <div class="carousel-slide fade">
+                    <div class="slide-number">6 / 10</div>
+                    <img src="banner6.jpeg" alt="Y-Diet பேனர் 6">
+                </div>
+                <div class="carousel-slide fade">
+                    <div class="slide-number">7 / 10</div>
+                    <img src="banner7.jpeg" alt="Smart Swap பேனர் 7">
+                </div>
+                <div class="carousel-slide fade">
+                    <div class="slide-number">8 / 10</div>
+                    <img src="banner8.jpeg" alt="Habitome பேனர் 8">
+                </div>
+                <div class="carousel-slide fade">
+                    <div class="slide-number">9 / 10</div>
+                    <img src="banner9.jpeg" alt="ஆரோக்கிய பழக்கவழக்கங்கள் பேனர் 9">
+                </div>
+                <div class="carousel-slide fade">
+                    <div class="slide-number">10 / 10</div>
+                    <img src="banner10.jpeg" alt="Y2Z Life Systems பேனர் 10">
+                </div>
+
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            </div>
+        </header>
+
+        <main>
+            <h1>90% உட்புற வாழ்க்கை (Indoor Centric Life): "<span class="keyword-ydiet">Y-Diet</span>" மற்றும் "<span class="keyword-swap">Smart Swaps</span>" மூலம் ஆரோக்கியமான "<span class="keyword-habitome">Habitome</span>"-ஐ உருவாக்க இயற்கையான சூழல் ஏன் அவசியம்?</h1>
+            
+            <p>இன்றைய நவீன உலகில், நாம் ஒரு விசித்திரமான புள்ளிவிவரத்துடன் வாழ்கிறோம்: சராசரி மனிதன் தனது வாழ்நாளில் சுமார் <span class="keyword-habitome">90% நேரத்தை</span> கட்டிடங்களுக்குள் (வீடுகள், அலுவலகங்கள், மால்கள், வாகனங்கள்) செலவிடுகிறான். இது மனித வரலாற்றிலேயே ஒரு புதிய மற்றும் இயல்புக்கு மாறான வாழ்க்கை முறையாகும்.</p>
+            
+            <p>நமது உடலும் மூளையும் ஆயிரக்கணக்கான ஆண்டுகளாக வெளிப்புறச் சூழல்களுக்கேற்ப, அதாவது சூரிய ஒளி, சுத்தமான காற்று, மற்றும் இயற்கையின் சத்தங்களுக்கு ஏற்பப் பரிணாமம் அடைந்தவை. ஆனால் நமது தற்போதைய "<span class="keyword-habitome">கட்டிடச் சூழல்</span>" (Built Environment) நமது <span class="keyword-habitome">உயிரியல் தேவைக்கும்</span> (Biological Needs) நமது தினசரி வாழ்க்கை முறைக்கும் (Lifestyle) இடையே ஒரு பெரிய இடைவெளியை உருவாக்கியுள்ளது. இந்த பொருத்தமின்மையே இன்று நாம் காணும் பல நாட்பட்ட நோய்களுக்கும், மன அழுத்தத்திற்கும் மூல காரணமாக அமைகிறது.</p>
+
+            <h2>உட்புறச் சூழலின் (Indoor Default) உயிரியல் தாக்கங்கள்</h2>
+            
+            <p>நாம் 90% நேரம் உள்ளே இருக்கும்போது, நமது உடலுக்கு மூன்று முக்கிய விஷயங்கள் மறுக்கப்படுகின்றன:</p>
+            <ul>
+                <li><strong><span class="keyword-habitome">சூரிய ஒளி பற்றாக்குறை</span>:</strong> நமது உடலின் '<span class="keyword-habitome">மாஸ்டர் கடிகாரம்</span>' (Circadian Rhythm) சூரிய ஒளியை வைத்தே இயங்குகிறது. இது தூக்கமின்மை, சோர்வு, மற்றும் மனச்சோர்வுக்கு வழிவகுக்கிறது.</li>
+                <li><strong><span class="keyword-habitome">மோசமான காற்றின் தரம்</span>:</strong> உட்புறக் காற்றில் கார்பன் டை ஆக்சைடு (CO₂) அளவு அதிகரிக்கிறது. இது "<span class="keyword-habitome">மூளை மூடுபனி</span>" (Brain Fog) எனப்படும் மந்தமான உணர்வை, மற்றும் கவனம் செலுத்துவதில் சிரமத்தை ஏற்படுத்துகிறது.</li>
+                <li><strong><span class="keyword-habitome">இயற்கையுடனான பிணைப்பின்மை</span> (Biophilia Deficit):</strong> இயற்கையோடு இணைந்திருக்க வேண்டும் என்ற நமது உள்ளார்ந்த நாட்டம் (<span class="keyword-habitome">Biophilia</span>) துண்டிக்கப்படும்போது, நமது மன அழுத்த ஹார்மோன்களின் அளவு அதிகரிக்கிறது.</li>
+            </ul>
+
+            <h2>பழக்கவழக்கத் தொகுதியும் (Habitome) கட்டிடச் சூழலும்</h2>
+            
+            <p>"<span class="keyword-habitome">ஹபிடோம்</span>" (Habitome) என்பது நமது ஆரோக்கியத்தை தீர்மானிக்கும் நமது தினசரி பழக்கவழக்கங்களின் ஒட்டுமொத்த தொகுப்பாகும். நாம் ஆரோக்கியமாக இருக்க "<span class="keyword-habitome">நேர்மறை பழக்கவழக்கத் தொகுதியை</span>" (Positive Habitome) உருவாக்க வேண்டும்.</p>
+            
+            <p>ஆனால், பழக்கவழக்கங்கள் ஒரு வெற்றிடத்தில் உருவாவதில்லை. அவை நமது <span class="keyword-habitome">சுழலாலேயே (Habitat)</span> உருவாக்கப்படுகின்றன. 90% நேரம் நாம் வாழும் ஆரோக்கியமற்ற உட்புறச் சூழல், ஒரு "<span class="keyword-habitome">எதிர்மறை பழக்கவழக்கத் தொகுதியை</span>" (Negative Habitome) தூண்டுகிறது:</p>
+            <ul>
+                <li>உடல் உழைப்பின்மை (Sedentary Life).</li>
+                <li>தவறான உணவுப் பழக்கம் (Mindless Eating).</li>
+                <li>தொடர்ச்சியான மன உளைச்சல் (Chronic Stress).</li>
+            </ul>
+            
+            <p>நாம் நமது <span class="keyword-habitome">மன உறுதியால் (Willpower)</span> மட்டும் இந்தப் பழக்கங்களை மாற்றிவிட முடியாது. இங்குதான் "<span class="keyword-swap">ஸ்மார்ட் ஸ்வாப்</span>" (Smart Swap) மற்றும் "<span class="keyword-ydiet">ஒய்-டயட்</span>" (Y-Diet) ஆகிய கருத்துக்கள் வருகின்றன. ஆரோக்கியமற்ற பழக்கங்களை வலுக்கட்டாயமாக நிறுத்துவதற்குப் பதிலாக, அவற்றைச் சிறிய, புத்திசாலித்தனமான, ஆரோக்கியமான மாற்று பழக்கவழக்கங்களால் ("<span class="keyword-swap">Smart Swaps</span>") மாற்றுவதே சிறந்த வழி. நமது <span class="keyword-habitome">வாழ்விடம் (Habitat)</span> இந்த "<span class="keyword-swap">ஸ்மார்ட் ஸ்வாப்</span>"-களை எளிதாகவும் இயற்கையாகவும் செய்ய உதவ வேண்டும்.</p>
+
+            <h2>தீர்வு: "ஸ்மார்ட் ஸ்வாப்"-களை தூண்டும் நுண்-வாழ்விடங்கள்</h2>
+            
+            <p>நாம் 90% நேரம் உள்ளே இருப்பதை மாற்ற முடியாவிட்டாலும், அந்த 90% நேரத்தை நாம் எங்கு, எப்படிச் செலவிடுகிறோம் என்பதை நம்மால் மாற்ற முடியும்.</p>
+            
+            <p>இதற்கான தீர்வே, நமது சொந்த "<span class="keyword-ydiet">இயற்கையான வெளிப்புறச் சூழல் அமைப்பை</span>" (Outdoor Natural Ecosystem) நமது கூரைகளிலோ அல்லது பால்கனிகளிலோ உருவாக்குவது. இது நமது ஆரோக்கியமான பழக்கவழக்கங்களுக்கான ஒரு கருவியாக (Tool) மாறுகிறது.</p>
+
+            <h3><span class="keyword-habitome">சூரிய ஒளி (L6)</span> - ஒரு சக்திவாய்ந்த "ஸ்மார்ட் ஸ்வாப்":</h3>
+            <div class="smart-swap sun">
+                <p><strong>பழைய பழக்கம்:</strong> காலையில் எழுந்ததும் மொபைல் போனைப் பார்ப்பது.</p>
+                <p><strong>புதிய பழக்கம் (<span class="keyword-swap">Smart Swap</span>):</strong> உங்கள் கூரையில் உள்ள "<span class="keyword-habitome">Sun-Well</span>" (L6) பகுதியில் 10 "<span class="keyword-habitome">Sun-Minutes</span>" செலவிடுவது.</p>
+                <p><strong>விளைவு:</strong> இந்த எளிய "<span class="keyword-swap">ஸ்மார்ட் ஸ்வாப்</span>" உங்கள் உயிரியல் கடிகாரத்தைச் சரிசெய்கிறது, வைட்டமின் D உற்பத்தியைத் தூண்டுகிறது, மற்றும் நாள் முழுவதும் ஆற்றலுடன் வைத்திருக்கும் ஒரு "<span class="keyword-habitome">Positive Habitome</span>"-ஐ உருவாக்குகிறது.</p>
+            </div>
+
+            <h3><span class="keyword-habitome">சுத்தமான காற்று (L4)</span> - மன அழுத்தத்திற்கான "ஸ்மார்ட் ஸ்வாப்":</h3>
+            <div class="smart-swap air">
+                <p><strong>பழைய பழக்கம்:</strong> மன அழுத்தம் ஏற்படும்போது, டீ அல்லது காபி குடிப்பது.</p>
+                <p><strong>புதிய பழக்கம் (<span class="keyword-swap">Smart Swap</span>):</strong> உங்கள் கூரையில் உள்ள "<span class="keyword-habitome">சுத்தமான காற்று அறையில்</span>" (L4) அமர்ந்து 5 நிமிடங்கள் <span class="keyword-habitome">ஆழ்ந்து சுவாசிப்பது</span> (Mindful Breathing).</p>
+                <p><strong>விளைவு:</strong> இது மன அழுத்த ஹார்மோன்களை உடனடியாகக் குறைக்கிறது. இந்த வாழ்விடம் (Habitat) மன அழுத்தத்தைக் கையாளும் உங்கள் பழக்கத்தையே (Habitome) மாற்றியமைக்கிறது.</p>
+            </div>
+
+            <h3><span class="keyword-ydiet">உணவு அமைப்பு (L5)</span> - "<span class="keyword-ydiet">Y-Diet</span>"-ஐ செயல்படுத்தும் "ஸ்மார்ட் ஸ்வாப்":</h3>
+            <div class="smart-swap food">
+                <p><strong>பழைய பழக்கம்:</strong> கடையில் வாங்கிய, பதப்படுத்தப்பட்ட, சுவையூட்டப்பட்ட உணவுகள்.</p>
+                <p><strong>புதிய பழக்கம் (<span class="keyword-swap">Smart Swap</span>):</strong> உங்கள் <span class="keyword-ydiet">மூலிகைத் தோட்டத்திலிருந்து</span> (L5) புத்தம் புதிய புதினா, துளசி, அல்லது கீரைகளைப் பறித்து உங்கள் உணவில் சேர்ப்பது.</p>
+                <p><strong>விளைவு:</strong> இதுதான் "<span class="keyword-ydiet">ஒய்-டயட்</span>" (Y-Diet)-ன் உண்மையான செயல்பாடு. நீங்கள் என்ன சாப்பிடுகிறீர்கள் என்பது மட்டுமல்ல, ஏன் (<span class="keyword-ydiet">Why</span>) சாப்பிடுகிறீர்கள் என்பதும் மாறுகிறது. உங்கள் உணவிற்கான "<span class="keyword-ydiet">Why</span>" இப்போது "சுவைக்காக" (Taste) அல்லது "பசிக்காக" (Hunger) மட்டுமல்ல, "ஆரோக்கியத்திற்காக" (Health), "புத்துணர்ச்சிக்காக" (Freshness), மற்றும் "இயற்கையுடன் இணைவதற்காக" (Connection) மாறுகிறது. இந்த "<span class="keyword-swap">ஸ்மார்ட் ஸ்வாப்</span>" உங்கள் உணவுப் பழக்கவழக்கத் தொகுப்பை (Dietary Habitome) முற்றிலுமாக மேம்படுத்துகிறது.</p>
+            </div>
+
+            <h2>முடிவுரை</h2>
+            
+            <p>நமது ஆரோக்கியம் என்பது நமது "<span class="keyword-habitome">Habitome</span>"-இன் விளைவு. நமது "<span class="keyword-habitome">Habitome</span>" என்பது நமது <span class="keyword-habitome">வாழ்விடத்தின்</span> விளைவு.</p>
+            
+            <p>இன்று, நமது இயல்புநிலை வாழ்விடம் ஆரோக்கியமற்றதாக உள்ளது. எனவே, ஒரு "<span class="keyword-habitome">Positive Habitome</span>"-ஐ உருவாக்க, நாம் நமது <span class="keyword-habitome">வாழ்விடத்தை</span> மாற்றியமைக்க வேண்டும். உங்கள் வீட்டின் கூரையில் நீங்கள் உருவாக்கும் அந்தச் சிறிய இயற்கைச் சூழல் அமைப்பு, ஆரோக்கியமான "<span class="keyword-swap">Smart Swaps</span>"-களைச் செய்வதை எளிதாக்குகிறது, உங்கள் "<span class="keyword-ydiet">Y-Diet</span>"-ஐ அர்த்தமுள்ளதாக்குகிறது, மற்றும் ஒரு முழுமையான ஆரோக்கியமான வாழ்க்கை முறைக்கு அடித்தளம் அமைக்கிறது.</p>
+        </main>
+
+        <footer>
+            <p class="project-name">Y2Z Life Systems (Y-Diet Project)</p>
+            
+            <div class="disclaimer">
+                <p><strong>Disclaimer:</strong> இங்கு பகிரப்படுபவை பொதுக் கல்விக்கான வழிகாட்டுதல்கள் மட்டுமே. உங்கள் உடல்நிலைக்கு ஏற்ற உணவு முறை மற்றும் பழக்கவழக்கங்களை அறிய, விரைவில் வெளிவரும் Y2Z-ன் 'Personalized Lifestyle and Diet Pattern' திட்டத்தைப் பயன்படுத்தலாம்.</p>
+                <p>இது ஒரு தனிமனித, சமூக, தொழில்முறை மற்றும் ஆன்மிக மேம்பாட்டை ஒருங்கிணைந்த சுய-கற்றல் அமைப்பு (Self-Learning Integrated System).</p>
+            </div>
+            
+            <p class="copyright">© 2025 Y2Z Life Systems</p>
+        </footer>
+
+    </div> <script>
+        let slideIndex = 0; // 0 இலிருந்து தொடங்கவும், அதனால் முதல் slide காட்டப்படும்
+        
+        // Next/previous கட்டுப்பாடுகள்
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        // முக்கிய ஸ்லைடு செயல்பாடு
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("carousel-slide");
+            
+            // குறியீட்டை சரிபார்த்தல் (Looping)
+            if (n === undefined) { // autoSlide இலிருந்து அழைக்கப்பட்டால்
+                 slideIndex++;
+            } else { // plusSlides இலிருந்து அழைக்கப்பட்டால்
+                 slideIndex = n;
+            }
+            
+            if (slideIndex > slides.length) { slideIndex = 1 } // கடைசி ஸ்லைடில் இருந்து முதல் ஸ்லைடுக்கு செல்ல
+            if (slideIndex < 1) { slideIndex = slides.length } // முதல் ஸ்லைடில் இருந்து கடைசி ஸ்லைடுக்கு செல்ல
+            
+            // எல்லா ஸ்லைடுகளையும் மறைக்க
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            
+            // தற்போதைய ஸ்லைடை மட்டும் காட்ட
+            if (slides.length > 0) {
+                slides[slideIndex - 1].style.display = "block";
+            }
+        }
+        
+        // தானாக ஸ்லைடு மாறும் செயல்பாடு
+        function autoSlide() {
+            showSlides(); // 'n' இல்லாமல் அழைத்தால், அது தானாகவே அடுத்த ஸ்லைடுக்கு செல்லும்
+            setTimeout(autoSlide, 4000); // 4 வினாடிகளுக்கு ஒருமுறை மீண்டும் இயக்கவும்
+        }
+
+        // பக்கத்தை லோட் செய்தவுடன், முதல் ஸ்லைடை காட்டி, தானியங்கி இயக்கத்தை தொடங்கவும்
+        showSlides(slideIndex = 1); // முதல் ஸ்லைடை முதலில் காட்டவும்
+        autoSlide(); // தானியங்கி இயக்கத்தை தொடங்கவும்
+
+    </script>
+    </body>
+</html>
